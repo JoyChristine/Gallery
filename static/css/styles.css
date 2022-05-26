@@ -1,0 +1,11 @@
+h1{
+    text-align: center;
+    font-size: 2em;
+    color: rgb(197, 28, 28);
+    background-color: aqua;
+}
+#navbarNav a{
+    color: rgba(177, 19, 19, 0.55);
+    font-weight: bold;
+  
+}
