@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +11,70 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hello world</h1>
-    {%for item in image%}
-        <h1>{{item.name}}</h1>
-        <img src="{{item.image.url}}" alt="dddd" width="150" height="200">
-        <p>{{item.email}}</p>
-    {%endfor%}
+    <nav class="navbar bg-dark">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img src="https://cdn.jsdelivr.net/gh/art-of-programming/art-of-programming.github.io@master/img/logo.png" alt="logo" width="50" height="50">
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="col-sm-4 col-md-4 navbar-right">
+                <form class="navbar-form" role="search"  action="{% url 'search' %}" >
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search Image by category" name="q">
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary" type="submit">Search</button>
+                          </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="cont">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {%for item in image%}
+                    <h1>{{item.name}}</h1>
+                    <img src="{{item.image.url}}" alt="dddd" width="150" height="200">
+                    <p>{{item.email}}</p>
+                    {%endfor%}
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- search results -->
+  
+    <div class="container">
+        {%if images %}
+        <div class="row">
+           
+            <h2>Found {{images | length }} searches</h2>
+            {%else%}
+            <h2>Fou</h2>
+            {%endif%}
+            
+        </div>
+        <div class="row">
+            {%for image in images%}
+            <div class="col-md-4">
+                <h3>{{image.name}}</h3>
+                <img src="{{image.image.url}}" alt="dddd" width="150" height="200">
+                <p>{{image.email}}</p>
+            </div>
+            {%endfor%}
+            
+        </div>
+    </div>
+    
+    
     
 </body>
 </html>

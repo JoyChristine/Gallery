@@ -7,6 +7,7 @@ urlpatterns = [
    
     # to see date run news/today
     path('', views.index, name='index'),
+    path('search/',views.search, name='search'),
     
 ]
 if settings.DEBUG:

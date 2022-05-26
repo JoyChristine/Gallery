@@ -14,6 +14,13 @@ class Category(models.Model):
 
     def __str__(self):
         return self.cat_name
+
+
+    def search_by_cat(self, category):
+        cat = Image.objects.filter(category__cat_name__icontains=category)
+
+        return cat
+
 class Image(models.Model):
     name = models.CharField(max_length=20)
     image = models.ImageField(upload_to='picture/',null=True)
