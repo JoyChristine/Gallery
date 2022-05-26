@@ -13,5 +13,12 @@
 </head>
 <body>
     <h1>polopol</h1>
+   {%for item in image%}
+   <p>{{item.name}}</p>
+   <img src="{{item.pic.url}}" alt="image" >
+  
+   
+   {%endfor%}
+    
 </body>
 </html>
