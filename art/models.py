@@ -16,10 +16,6 @@ class Category(models.Model):
         return self.cat_name
 
 
-    def search_by_cat(self, category):
-        cat = Image.objects.filter(category__cat_name__icontains=category)
-
-        return cat
 
 class Image(models.Model):
     name = models.CharField(max_length=20)
@@ -33,5 +29,11 @@ class Image(models.Model):
     
     def save_image(self):
         self.save()
+
+    @classmethod
+    def search_by_category(cls,search_term):
+        images = cls.objects.filter(category__cat_name__icontains=search_term)
+        return images
+
 
 
