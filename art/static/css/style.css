@@ -1,4 +1,28 @@
-#search-img{
-    height:20vw;
-    width:20vw;
+body{
+    overflow:auto;
+}
+
+#search-img,#display-img{
+    height:24vw;
+    width:24vw;
+}
+#display{
+    background-color:red;
+   
+    
+   
+}
+#col-img{
+    border:1px solid black;
+    display:flex;
+
+    flex-direction:row;
+    flex-wrap: wrap;
+ 
+    padding-left:2vw;
+
+    
+}
+#display-img{
+    padding:1vw 1vw 1vw 1vw;
 }
