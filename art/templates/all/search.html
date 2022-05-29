@@ -76,6 +76,9 @@
                             <div class="modal-body">
                                 <h4 class="modal-title">{{image.name}}</h4>
                                 <img src="{{image.image.url}}" alt="{image.name}" id="display-img"  >
+                                <h5>Category: {{image.category}}</h5>
+                                <h5>Location : {{image.location}}</h5>
+                                
                                 <p>{{image.description}}</p>
                             </div>
                             <div class="modal-footer">
@@ -84,6 +87,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class = "single-img-content">
+                    <h3>{{item.name}}</h3>
+                    
                 </div>
 
             {%endfor%}
