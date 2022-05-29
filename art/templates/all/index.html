@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
@@ -46,9 +47,9 @@
         <div class="col-sm-4 col-md-4 navbar-right ">
             <form class="navbar-form " role="search"  action="{% url 'search' %}" >
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search Image by category" name="image" >
+                    <input type="text" class="form-control" placeholder="Search Tourism,Farm,Kenyan Heritage" name="image" >
                     <div class="input-group-btn">
-                        <button class="btn btn-primary" type="submit" >Search</button>
+                        <button class="btn btn-success" type="submit" ><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024"><path fill="currentColor" d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1c-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"/></svg></button>
                       </div>
                 </div>
             </form>
@@ -92,6 +93,7 @@
 
     </div>
     {%endfor %} -->
+    <!-- <b>Categories : Tourism,Farm,Kenyan Heritage</b> -->
         <div class = "gallery">
           
 
@@ -122,8 +124,16 @@
                                 
                             </div>
                             <div class="modal-footer">
-                                <input type="text" value="{{item.image.url}}" id="{{item.id}}.url" style="width:110vw">
-                                <button type="button" class="btn btn-default" onclick="mylink('{{item.id}}.url')" >Copy link</button>
+                                <input type="text" value="{{item.image.url}}" id="{{item.id}}.url" class="link" style="width:110vw">
+                                <button type="button" onclick="myFunc()"   class="btn btn-primary"  >Copy link</button>
+                                <script>
+                                    function myFunc() {
+                                        var copyText = document.getElementById("{{item.id}}.url");
+                                        copyText.select();
+                                        navigator.clipboard.writeText(copyText.value);
+                                        alert("Image Url copied to clipboard");
+                                    }
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -177,6 +187,7 @@
        
    
 {%endblock%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
