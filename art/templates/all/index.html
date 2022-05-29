@@ -18,14 +18,33 @@
 {% block content %}
 {{ block.super}} 
 
-
-     
         <div class="row" id="display">
             <div class="" id="col-img" >
                 {%for item in image%}
+                <a href="" data-bs-toggle="modal" data-bs-target="#my{{item.id}}">
+                    <img src="{{item.image.url}}" alt="{image.name}" id="display-img">
+                </a>
                 
-                <img src="{{item.image.url}}" alt="{image.name}" id="display-img">
                 
+                <div class="modal" id="my{{item.id}}" >
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" id="close" class="close" data-bs-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">{{item.name}}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <img src="{{item.image.url}}" alt="{image.name}" id="display-img"  >
+                                <p>{{item.description}}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
                 {%endfor%}
             </div>
         </div>
