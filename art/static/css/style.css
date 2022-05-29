@@ -26,3 +26,7 @@ body{
 #display-img{
     padding:1vw 1vw 1vw 1vw;
 }
+#close{
+    border: none;
+    background-color:red;
+}
