@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
+import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -125,6 +126,11 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 
 ]
+cloudinary.config( 
+  cloud_name = "december", 
+  api_key = "687468899237261", 
+  api_secret = "4T4q1Ghd40LVTBtZGx5o_PrWreQ" 
+)
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
