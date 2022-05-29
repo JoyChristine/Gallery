@@ -6,7 +6,7 @@ def index(request):
     image = Image.objects.all()
     location = Image.objects.all()
     category = Image.objects.all()
-    context = {'image':image, 'location':location, 'category':category}
+    context = {'images':image, 'location':location, 'category':category}
     return render(request, 'all/index.html',context)
 
 def filter_location(request, location_id):
