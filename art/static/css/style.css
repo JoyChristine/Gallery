@@ -1,32 +1,29 @@
 body{
     overflow:auto;
+    background-image:url(../img/background.jpg);
 }
 
 #search-img,#display-img{
-    height:24vw;
-    width:24vw;
+    height:30vw;
+    width:30vw;
 }
 #display{
-    background-color:red;
+    overflow:auto;
+    width:100%;
    
     
    
 }
 #col-img{
-    border:1px solid black;
     display:flex;
-
-    flex-direction:row;
+    overflow:auto;
     flex-wrap: wrap;
- 
-    padding-left:2vw;
-
+    justify-content:space-between;
     
 }
-#display-img{
+/* #display-img{
     padding:1vw 1vw 1vw 1vw;
-}
-#close{
-    border: none;
+} */
+.modal-header .close{
     background-color:red;
 }
