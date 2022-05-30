@@ -43,7 +43,7 @@ class Category(models.Model):
 
 class Image(models.Model):
     name = models.CharField(max_length=20)
-    image = CloudinaryField('picture_img',null=True)
+    image = CloudinaryField('image',null=True)
     description = models.TextField(max_length=1000)
     location = models.ForeignKey(Location, on_delete=models.DO_NOTHING)
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
